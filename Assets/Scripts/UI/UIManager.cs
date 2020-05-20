@@ -14,9 +14,6 @@ public class UIManager : MonoBehaviour
 
     Canvas canvas;
 
-    Transform parent;
-    public Transform targetTransform;
-
     void Awake()
     {
         if(instance)
@@ -26,7 +23,7 @@ public class UIManager : MonoBehaviour
         }
         instance = this;
         canvas = GetComponent<Canvas>();
-        parent = transform.parent;
+        DesactivateUI();
     }
    
 
@@ -51,11 +48,11 @@ public class UIManager : MonoBehaviour
     public void ActivateUI()
     {        
         activated = true;
-        canvas.gameObject.SetActive(false);
+        canvas.gameObject.SetActive(true);
     }
     public void DesactivateUI()
     {
         activated = false;
-        canvas.gameObject.SetActive(true);
+        canvas.gameObject.SetActive(false);
     }
 }

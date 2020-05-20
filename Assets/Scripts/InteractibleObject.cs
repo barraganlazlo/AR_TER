@@ -12,11 +12,12 @@ public class InteractibleObject : MonoBehaviour
         if(worldTMProName!=null) worldTMProName.text = piece.name;
     }
     private void OnMouseDown()
-    {
+    {        
         if (!EventSystem.current.IsPointerOverGameObject()) // si le pointer n'est pas sur un élément d'ui
         {
             UIManager.instance.UpdateContent(piece);
             UIManager.instance.ActivateUI();
+            Debug.Log("y");
         }
     }
 }
